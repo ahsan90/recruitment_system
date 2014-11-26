@@ -1,0 +1,27 @@
+<div class="container">
+<h1>Job Lists</h1>
+
+  <table class="table table-striped table-bordered table-hover">
+    <tr>
+
+      <thead>
+         <th>Job Title</th>
+         <th>Academic Requirements</th>
+         <th>Experience Requirements</th>
+      </thead>
+    </tr>
+<% @vacancies.each do |vacancy| %>
+     <tbody>
+     <tr>
+  <td><%= link_to vacancy.title, vacancy %></td>
+    <td>
+      <%= vacancy.academic_requirements %>
+    </td>
+    <td>
+      <%= vacancy.experience %>
+    </td>
+     </tr>
+     </tbody>
+<% end %>
+  </table>
+</div>

@@ -1,0 +1,55 @@
+<div class="row">
+  <div class="col-lg-8 col-lg-offset-3">
+  <%= form_for @vacancy, :html => {class: "form-horizontal"} do |f|%>
+      <%= render 'shared/error_messages', object: f.object %>
+        <p><strong>Category</strong>
+          <%= f.select :job_category_id, @category.all.collect{|p| [ p.name, p.id ] },
+                       { prompt: "Please Select"} %>
+        </p>
+        <p>
+          <%= f.label :title, "Job Title" %>
+          <%= f.text_field :title %>
+        </p>
+        <p>
+          <%= f.label :no_of_jobs, "No. of Vacancies" %>
+          <%= f.text_field :no_of_jobs %>
+        </p>
+        <p>
+          <%= f.label :description, "Job Descriptions/Responsibilities"%>
+          <%= f.text_area :description %>
+        </p>
+        <p>
+          <%= f.label :academic_requirements, "Academic Requiremnts" %>
+          <%= f.text_area :academic_requirements %>
+        </p>
+
+        <p>
+          <%= f.label :experience, "Experience Requirements" %>
+          <%= f.text_area :experience %>
+        </p>
+        <p>
+          <%= f.label :job_type, "Job Nature" %>
+          <%= f.text_field :job_type %>
+        </p>
+        <p>
+          <%= f.label :benefits, "Benefits" %>
+          <%= f.text_area :benefits %>
+        </p>
+        <p>
+          <%= f.label :salary, "Salary Ranges" %>
+          <%= f.text_field :salary %>
+        </p>
+        <p>
+          <%= f.label :job_location %>
+          <%= f.text_field :job_location %>
+        </p>
+        <p>
+          <%= f.label :job_source %>
+          <%= f.text_field :job_source %>
+        </p>
+        <p>
+          <%= f.submit %>
+        </p>
+  <% end %>
+   </div>
+</div>

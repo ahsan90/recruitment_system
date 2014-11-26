@@ -1,0 +1,40 @@
+<h2>Job Details:</h2>
+    <h2>Job Title:</h2>
+    <h3><%= @vacancy.title %></h3>
+
+    <p>
+      <h3>Job Description/Responsibilities</h3>
+      <%= @vacancy.description %>
+    </p>
+    <p>
+<h3>Academic Requirements</h3>
+      <%= @vacancy.academic_requirements %>
+    </p>
+    <p>
+<h3>Experience Requirements:</h3>
+      <%= @vacancy.experience %>
+    </p>
+    <p>
+<h3>Additional job requirements:</h3>
+      <%= @vacancy.additional_requirements %>
+    </p>
+    <p>
+<h3>Job Nature:</h3>
+      <%= @vacancy.job_type %>
+    </p>
+    <p>
+<h3>Benefits:</h3>
+      <%= @vacancy.benefits %>
+    </p>
+    <p>
+<h3>Job Location:</h3>
+      <%= @vacancy.job_location %>
+    </p>
+    <p>
+<h3>JobSource</h3>
+      <%= @vacancy.job_source %>
+    </p>
+    <p><strong>Job posting date:</strong>
+       <%= time_ago_in_words (@vacancy.created_at) %>
+    </p>
+<p><%=link_to "Edit", edit_vacancy_path %>  |  <%= link_to "delete", @vacancy, method: :delete, data: { confirm: "You sure?" } %></p>

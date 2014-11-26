@@ -1,0 +1,27 @@
+<p id="notice"><%= notice %></p>
+
+<p>
+  <strong>Category:</strong>
+  <%= @job_category.name %>
+</p>
+<% if @job_category.vacancies.count > 0 %>
+<p>Total <%= pluralize(@job_category.vacancies.count, 'job')  %></p>
+<table class="table">
+  <tr>
+  <th>Job Title</th>
+    <th>Academic Qualification</th>
+    <th>Experience</th>
+  </tr>
+  <% @job_category.vacancies.each do |vacancy| %>
+  <tr>
+    <td><%= link_to vacancy.title, vacancy %></td>
+    <td><%= vacancy.academic_requirements %></td>
+    <td><%= vacancy.experience %></td>
+  </tr>
+      <% end %>
+</table>
+    <% else %>
+    <p><strong>No job found for this categroy</strong></p>
+   <% end %>
+<%= link_to 'Edit Category', edit_job_category_path(@job_category) %> |
+<%= link_to 'Back', job_categories_path %>
