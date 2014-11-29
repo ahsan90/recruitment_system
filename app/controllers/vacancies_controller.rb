@@ -12,7 +12,7 @@ class VacanciesController < ApplicationController
     @vacancy = Vacancy.new(vacancy_params)
     if @vacancy.save
       flash[:notice] = "New Vacancy has been posted successfully"
-      render @vacancy
+      redirect_to @vacancy
     else
       redirect_to 'new'
     end
